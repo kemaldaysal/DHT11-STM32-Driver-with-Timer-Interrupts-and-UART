@@ -11,11 +11,11 @@ uint16_t elapsed_time = 0;
 
 uint8_t raw_data[40];
 
-uint8_t humidity_integer;
-uint8_t humidity_decimal;
-uint8_t temp_integer;
-uint8_t temp_decimal;
-uint8_t checksum;
+uint8_t humidity_integer = 0;
+uint8_t humidity_decimal = 0;
+uint8_t temp_integer = 0;
+uint8_t temp_decimal = 0;
+uint8_t checksum = 0;
 
 volatile float humidity;
 volatile float temperature;

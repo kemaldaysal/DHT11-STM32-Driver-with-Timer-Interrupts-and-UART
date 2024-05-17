@@ -66,6 +66,8 @@ void TIM6_IRQHandler(void)
 					} else {
 						checksum_fail_count++;
 						send_sensor_data_to_uart_checksum_error();
+						humidity = 0;
+						temperature = 0;
 						dht_state = 0;
 						return;
 					}
@@ -73,12 +75,16 @@ void TIM6_IRQHandler(void)
 				} else {
 					read_fail_count++;
 					send_sensor_data_to_uart_read_error();
+					humidity = 0;
+					temperature = 0;
 					dht_state = 0;
 					return;
 				}
 			} else {
 				reply_fail_count++;
 				send_sensor_data_to_uart_reply_error();
+				humidity = 0;
+				temperature = 0;
 				dht_state = 0;
 				return;
 			}
