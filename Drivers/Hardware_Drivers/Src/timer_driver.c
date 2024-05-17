@@ -134,13 +134,14 @@ void timer_init(timer_range_ms_or_us_e timer_range, uint16_t arr)
 	SET_BIT(RCC->APB1ENR, RCC_APB1ENR_TIM6EN);
 //	__HAL_RCC_TIM6_CLK_ENABLE();
 
-	if (timer_range == MILLISECONDS)
+	if (timer_range == MICROSECONDS)
+	{
+		TIM6->PSC = 48-1;
+
+	} else if (timer_range == MILLISECONDS)
 	{
 		TIM6->PSC = 48000-1;
 
-	} else if (timer_range == MICROSECONDS) {
-
-		TIM6->PSC = 48-1;
 	}
 
 	TIM6->ARR = (arr)-1;

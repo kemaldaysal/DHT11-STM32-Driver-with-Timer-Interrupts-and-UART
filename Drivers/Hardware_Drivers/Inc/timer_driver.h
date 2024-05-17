@@ -12,8 +12,8 @@
 #include "stdint.h"
 
 typedef enum{
+	MICROSECONDS,
 	MILLISECONDS,
-	MICROSECONDS
 }timer_range_ms_or_us_e;
 
 void timer_basic_delay(uint16_t delay);
