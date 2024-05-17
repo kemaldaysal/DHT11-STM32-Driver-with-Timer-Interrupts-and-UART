@@ -87,7 +87,7 @@ void TIM6_IRQHandler(void)
 	}
 }
 
-void timer_basic_delay(uint16_t delay)
+void timer_basic_while_delay(uint16_t delay)
 {
 	TIM6->CNT = 0;;
 	while ((TIM6->CNT) < delay);

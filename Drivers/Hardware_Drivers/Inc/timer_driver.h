@@ -16,7 +16,7 @@ typedef enum{
 	MILLISECONDS,
 }timer_range_ms_or_us_e;
 
-void timer_basic_delay(uint16_t delay);
+void timer_basic_while_delay(uint16_t delay);
 void timer_reinit_with_new_settings(timer_range_ms_or_us_e timer_range, uint16_t stoptime);
 void timer_reset_counter(void);
 void timer_init(timer_range_ms_or_us_e timer_choice, uint16_t arr);

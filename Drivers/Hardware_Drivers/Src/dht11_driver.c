@@ -25,16 +25,16 @@ dht11_reply_status_e dht11_start_signal_and_check_response(void)
 
 	dht11_pin_set_to_output();
 	dht11_pin_set_to_low();
-	timer_basic_delay(DURATION_START_SIGNAL_IN_US);
+	timer_basic_while_delay(DURATION_START_SIGNAL_IN_US);
 	dht11_pin_set_to_high();
-	timer_basic_delay(DURATION_WAIT_FOR_FIRST_REPLY);
+	timer_basic_while_delay(DURATION_WAIT_FOR_FIRST_REPLY);
 	dht11_pin_set_to_input();
-	timer_basic_delay(DURATION_UNTIL_MIDDLE_OF_FIRST_REPLY); // jump to the the middle of first 80us low state reply from dht11
+	timer_basic_while_delay(DURATION_UNTIL_MIDDLE_OF_FIRST_REPLY); // jump to the the middle of first 80us low state reply from dht11
 
 	if (dht11_check_if_pin_is_low()) // check if dht11 responded with 80us low signal at that time
 	{
 
-		timer_basic_delay(DURATION_UNTIL_MIDDLE_OF_SECOND_REPLY); // now jump to the just the middle of the second 80us high state reply from dht11
+		timer_basic_while_delay(DURATION_UNTIL_MIDDLE_OF_SECOND_REPLY); // now jump to the just the middle of the second 80us high state reply from dht11
 
 		if (dht11_check_if_pin_is_high())
 		{
