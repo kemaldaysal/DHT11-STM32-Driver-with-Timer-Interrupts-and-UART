@@ -1,7 +1,7 @@
 **General Information and References**
 -
 
-* This project is created and tested with STM32F070RB. When implementing this code to other projects with different MCUs, the configurations of pins, DHT11, timer and UART, and also the timer's prescaler values will need to be changed, based on MCU's frequency.
+* This project is created and tested with STM32F070RB. When implementing this code to other projects with different MCUs, the configurations of pins, DHT11, timer and UART, and also the timer's prescaler values based on MCU's frequency will need to be changed.
 * Before starting, measuring period (default (min) 1150ms) can be changed by adjusting the period parameter in main start function (start_dht11_timer_and_uart), located in application_layer_driver.c.    
 
 **Things to do before trying the project codes**
