@@ -13,8 +13,8 @@
 **Known Bugs and Limitations**
 -
 
-*Because of DHT11 having 1 Hz polling rate (meaning only one read per second) and the other codes taking some time (even in one of the shortest and time-efficient forms), when the waiting time between measurements goes below 1150ms, the dht11 starts to fail to reply to the MCU's start signals. For now, a preventation function is added if enters a measurement period parameter lower than 1150ms. To do this, the function basically fixes the period to 1150ms (lowest possible in my code and config, as far as i could found).
-*Because of the majority of main functions working with timer interrupts (instead of blocking HAL delays and other delays), the period between measurements parameters' max value is 65535 (2^16) milliseconds, which is 65.5 seconds, in this configuration functions. If a measurement period longer than 65.5 seconds is needed in some applications, a new timer function with a different timer prescaler value is needed.       
+* Because of DHT11 having 1 Hz polling rate (meaning only one read per second) and the other codes taking some time (even in one of the shortest and time-efficient forms), when the waiting time between measurements goes below 1150ms, the dht11 starts to fail to reply to the MCU's start signals. For now, a preventation function is added if enters a measurement period parameter lower than 1150ms. To do this, the function basically fixes the period to 1150ms (lowest possible in my code and config, as far as i could found).
+* Because of the majority of main functions working with timer interrupts (instead of blocking HAL delays and other delays) and the used timer is a 16-bit timer, the period between measurements parameters' max value is 65535 (2^16) milliseconds, which is 65.5 seconds, in this configuration functions. If a measurement period longer than 65.5 seconds is needed in some applications, a new timer function with a different timer prescaler approach is needed.       
 
 **To Do List**
 -
